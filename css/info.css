@@ -1,0 +1,151 @@
+/* INFO template: banner + FAQs, Definitions, Helpline */
+
+/* --- page-specific banner photos (shared banner rules now live in style.css) --- */
+.pb-faq{--bn:url("../images/banner-faq.webp");--bp:78%}
+.pb-defs,.pb-help{--bn:url("../images/banner-definitions.webp");--bp:62%}
+
+/* --- definitions + helpline side list --- */
+body:is(.pg-defs,.pg-help,.pg-acts) .df-main{padding:36px 0 56px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-cols{display:grid;grid-template-columns:237px minmax(0,1fr);gap:0;align-items:start}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-side{position:sticky;top:90px;align-self:start}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump h3{font-family:var(--body);font-size:10.5px;line-height:16px;font-weight:600;letter-spacing:.2px;text-transform:uppercase;color:#1d1d1d;margin-bottom:14px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump nav{display:flex;flex-direction:column;border-left:1px solid #dcdcdc;max-height:calc(100vh - 170px);overflow:auto}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump a{padding:6px 0 6px 11px;font-size:10.5px;line-height:15px;color:#555;transition:color .2s}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump a:hover{color:var(--green)}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump a.on{color:var(--green-dark);font-weight:600}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term{padding-bottom:49px;scroll-margin-top:88px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term:last-child{padding-bottom:0}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term h2{color:#1d1d1d;margin-bottom:15px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term p{font-size:12px;line-height:18px;color:#555;margin:0 0 12px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term ul{list-style:none;margin:0 0 4px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term li{position:relative;padding-left:12px;font-size:12px;line-height:18px;color:#555;margin-bottom:12px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-term li:before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--green)}
+body:is(.pg-defs,.pg-help,.pg-gloss,.pg-acts) .df-more{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:12px;font-weight:600;color:var(--orange);transition:color .2s}
+body:is(.pg-defs,.pg-help,.pg-gloss,.pg-acts) .df-more svg{width:19px;height:9px;transition:translate .25s}
+body:is(.pg-defs,.pg-help,.pg-gloss,.pg-acts) .df-more:hover{color:var(--green)}
+body:is(.pg-defs,.pg-help,.pg-gloss,.pg-acts) .df-more:hover svg{translate:4px 0}
+@media (max-width:1000px){body:is(.pg-defs,.pg-help,.pg-acts) .df-cols{grid-template-columns:1fr;padding-left:var(--gutter,16px);padding-right:var(--gutter,16px)}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-side{position:static;margin-bottom:26px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump nav{max-height:none;flex-direction:row;flex-wrap:wrap;border-left:0;gap:6px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump a{padding:5px 10px;border:1px solid #dcdcdc;border-radius:99px}
+body:is(.pg-defs,.pg-help,.pg-acts) .df-jump a.on{border-color:var(--green)}
+}
+
+
+/* --- faqs --- */
+body.pg-faqs .fq-main{background:#fbf7ee;padding:19px 0 60px}
+body.pg-faqs .fq-cols{display:grid;grid-template-columns:207px minmax(0,1fr);gap:21px;align-items:start}
+body.pg-faqs .fq-side{background:#fff;border:1px solid #d6dcd4;border-radius:15px;padding:10px 0;display:flex;flex-direction:column;overflow:hidden}
+body.pg-faqs .fq-side button{position:relative;text-align:left;padding:7px 15px 7px 16px;min-height:33px;font-size:10.5px;line-height:15px;font-weight:600;color:#555;background:transparent;transition:color .2s,background-color .2s}
+body.pg-faqs .fq-side button:hover{color:var(--green);background:#f6faf7}
+body.pg-faqs .fq-side button.on{color:var(--green-dark);font-weight:700}
+body.pg-faqs .fq-side button.on:before{content:"";position:absolute;left:0;top:7px;bottom:7px;width:2px;background:var(--green)}
+body.pg-faqs .fq-list details{background:#fff;border-radius:12px;box-shadow:0 1px 0 #cfd6cf,0 1px 3px rgba(0,0,0,.04);padding:0 30px;margin-bottom:13px}
+body.pg-faqs .fq-list details:last-of-type{margin-bottom:0}
+body.pg-faqs .fq-list summary{height:58px;font-size:16px;line-height:22px;font-weight:600;gap:16px}
+body.pg-faqs .fq-list details[open] summary{height:66px}
+body.pg-faqs .fq-list summary:after{flex:none;width:8px;height:8px}
+body.pg-faqs .fq-list summary:hover{color:var(--green)}
+body.pg-faqs .fq-a{padding:0 0 24px;margin-top:-6px}
+body.pg-faqs .fq-a p{margin:0;padding:0;font-size:13.5px;line-height:21px;color:#555}
+body.pg-faqs .fq-check{list-style:none;margin:14px 0 0;display:flex;flex-direction:column;gap:10px}
+body.pg-faqs .fq-check li{display:flex;align-items:center;gap:8px;font-size:12px;line-height:17px;color:#555}
+body.pg-faqs .fq-check svg{width:14px;height:14px;flex:none;color:var(--green)}
+body.pg-faqs .fq-none{text-align:center;color:#666;padding:36px 0}
+body.pg-faqs .fq-none[hidden],body.pg-faqs .fq-panel[hidden]{display:none}
+body.pg-faqs .fq-panel details[hidden]{display:none}
+body.pg-faqs .fq-panel .fq-h{font-size:12px;font-weight:700;color:var(--green-dark);margin:0 0 10px}
+@media (max-width:1000px){body.pg-faqs .fq-cols{grid-template-columns:1fr}
+body.pg-faqs .fq-side{flex-direction:row;flex-wrap:wrap;padding:8px;gap:4px}
+body.pg-faqs .fq-side button.on:before{display:none}
+body.pg-faqs .fq-side button.on{background:#eef8f2;border-radius:6px}
+}
+@media (max-width:640px){body.pg-faqs .fq-list details{padding:0 16px}
+body.pg-faqs .fq-list summary{font-size:14px;height:auto;min-height:54px;padding:10px 0}
+body.pg-faqs .fq-list details[open] summary{height:auto}
+}
+
+
+/* --- helpline --- */
+body.pg-help .df-jump nav{max-width:190px}
+body.pg-help .hl-sec{scroll-margin-top:88px}
+body.pg-help .hl-sec + .hl-sec{margin-top:52px}
+body.pg-help .hl-sec h2{color:#1d1d1d;margin-bottom:14px}
+body.pg-help .hl-sec h2.hl-h1{margin-bottom:24px}
+body.pg-help .hl-sec>p{font-size:12px;line-height:18px;color:#555;margin:0 0 16px}
+body.pg-help .hl-acc details{background:transparent;border-radius:0;box-shadow:none;padding:0;border-bottom:1px solid #d3d3d3}
+body.pg-help .hl-acc details:hover{box-shadow:none}
+body.pg-help .hl-acc summary{height:59px;font-size:13.5px;font-weight:600;color:var(--green-dark);gap:16px}
+body.pg-help .hl-acc details[open] summary{height:46px}
+body.pg-help .hl-acc summary:after{flex:none;width:8px;height:8px}
+body.pg-help .hl-acc summary:hover{color:var(--green)}
+body.pg-help .hl-a{padding:0 0 22px}
+body.pg-help .hl-a p{margin:0 0 10px;padding:0;font-size:12px;line-height:18px;color:#555}
+body.pg-help .hl-a em{font-style:normal}
+body.pg-help .hl-a ul{list-style:none;margin:0 0 6px}
+body.pg-help .hl-a li{position:relative;padding-left:12px;font-size:12px;line-height:18px;color:#555;margin-bottom:12px}
+body.pg-help .hl-a li:before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--green)}
+body.pg-help .hl-table{border:1px solid #cdd5cf;border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 1px 0 #cdd5cf}
+body.pg-help .hl-table table{width:100%;border-collapse:collapse}
+body.pg-help .hl-table th{background:#f1faf5;color:var(--green-dark);font-size:12.5px;font-weight:600;text-align:left;height:39px;padding:0 15px;border-bottom:1px solid #d5dad7}
+body.pg-help .hl-table th:last-child,body.pg-help .hl-table td:last-child{text-align:center;width:200px}
+body.pg-help .hl-table td{height:39px;padding:0 15px;font-size:12px;color:#555;border-bottom:1px solid #d5dad7}
+body.pg-help .hl-table tbody tr:nth-child(even) td{background:#f1faf5}
+body.pg-help .hl-table tbody tr:last-child td{border-bottom:0}
+body.pg-help .hl-table tbody tr[hidden]{display:none}
+body.pg-help .hl-toggle{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:12px;font-weight:600;color:var(--green-dark);background:none;transition:color .2s}
+body.pg-help .hl-toggle svg{width:12px;height:12px;transition:transform .25s}
+body.pg-help .hl-toggle:hover{color:var(--green)}
+body.pg-help .hl-toggle[aria-expanded=false] svg{transform:rotate(180deg)}
+@media (max-width:640px){body.pg-help .hl-table th:last-child,body.pg-help .hl-table td:last-child{width:96px}
+body.pg-help .hl-table td,body.pg-help .hl-table th{padding:0 10px}
+}
+
+
+/* --- glossary (Common Mental Health Terms) --- */
+.pb-gloss{--bn:url("../images/banner-glossary.webp");--bp:70%}
+.pb-gloss h1{max-width:560px}
+.pb-gloss p{max-width:530px}
+body.pg-gloss .gl-main{padding:40px 0 64px}
+body.pg-gloss .gl-cols{display:grid;grid-template-columns:193px minmax(0,1fr);gap:33px;align-items:start}
+body.pg-gloss .gl-side{position:sticky;top:90px;display:flex;flex-direction:column;padding:12px 0;background:#f1f8f4;border:1px solid #cfe3d6;border-radius:15px;overflow:hidden}
+body.pg-gloss .gl-side button{position:relative;text-align:left;min-height:34px;padding:8px 14px 8px 16px;font-size:10.5px;line-height:16px;font-weight:600;color:#555;background:transparent;transition:color .2s,background-color .2s}
+body.pg-gloss .gl-side button:hover{color:var(--green)}
+body.pg-gloss .gl-side button.on{background:#fff;color:var(--green-dark);font-weight:700}
+body.pg-gloss .gl-side button.on:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--green)}
+body.pg-gloss .gl-letter{margin-bottom:6px}
+body.pg-gloss h2.gl-l{font-family:var(--body);font-size:10.5px;line-height:16px;font-weight:700;letter-spacing:0;color:var(--green);margin:14px 0 4px}
+body.pg-gloss .gl-letter:first-child h2.gl-l{margin-top:0}
+body.pg-gloss .gl-list details{background:transparent;box-shadow:none;border-radius:0;border-bottom:1px solid #d9d9d9;padding:0}
+body.pg-gloss .gl-list details:hover{box-shadow:none;border-bottom-color:#b9b9b9}
+body.pg-gloss .gl-list summary{height:41px;font-size:11.5px;line-height:16px;font-weight:600;color:#1d1d1d;gap:16px}
+body.pg-gloss .gl-list details[open] summary{height:41px}
+body.pg-gloss .gl-list summary:hover{color:var(--green)}
+body.pg-gloss .gl-list summary:after{flex:none;width:6px;height:6px;border-color:#333}
+body.pg-gloss .gl-a{padding:0 0 18px;margin-top:-4px}
+body.pg-gloss .gl-a p{margin:0;padding:0 0 12px;font-size:11.5px;line-height:18px;color:#555}
+body.pg-gloss .gl-none{text-align:center;color:#666;padding:36px 0}
+body.pg-gloss .gl-none[hidden],body.pg-gloss .gl-panel[hidden],body.pg-gloss .gl-list [hidden]{display:none}
+@media (max-width:760px){
+  body.pg-gloss .gl-cols{grid-template-columns:1fr;gap:22px}
+  body.pg-gloss .gl-side{position:static;flex-direction:row;overflow-x:auto;padding:6px;border-radius:12px;gap:2px}
+  body.pg-gloss .gl-side button{flex:none;white-space:nowrap;padding:8px 12px;border-radius:8px}
+  body.pg-gloss .gl-side button.on:before{display:none}
+}
+
+
+/* FAQ photo still has the green baked in, so its CSS shade is set to 0 for now (nothing is doubled).
+   When a CLEAN photo is dropped into images/banner-faq.webp, DELETE the --tint-a:0 line below and the CSS green appears. (Definitions + Helpline already use a clean photo.) */
+.pb-faq{--tint-a:0}
+
+/* --- Acts & Policies (same layout as Definitions) --- */
+.pb-acts{--bn:url("../images/banner-acts.webp");--bp:60%}
+.pb-acts h1{max-width:560px}
+.pb-acts p{max-width:640px}
+body.pg-acts .df-term p.df-doc{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:2px 0 0;color:#1d1d1d}
+body.pg-acts .df-doc a{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:var(--orange);text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+body.pg-acts .df-doc a svg{width:14px;height:14px;flex:none}
+body.pg-acts .df-doc a:hover{color:var(--green)}
+body.pg-acts .df-cols{grid-template-columns:265px minmax(0,1fr)}
+body.pg-acts .df-jump{padding-right:28px}
+@media (max-width:1000px){body.pg-acts .df-cols{grid-template-columns:1fr}body.pg-acts .df-jump{padding-right:0}}
