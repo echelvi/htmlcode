@@ -27,7 +27,7 @@ Rule for the HTML phase: content stays in the HTML (never in JS files). Every pa
 | Acts & Policies (`acts-policies.html`) | Items (title, description paragraphs, "Click here" document URL), Jump-to list |
 | Podcasts (`podcasts.html`) | Episode cards (image, title, text) + popup per episode: date, duration, description, speaker (name, link, social links), YouTube embed URL (`data-video`), platform links (Apple Podcasts / YouTube / Spotify / Amazon Music / YT Music - show only the ones that have a URL), topics, sort, paging |
 | Webinar (`webinars.html`) | Webinar cards (thumbnail, title, text) + popup: YouTube embed URL (`data-video`) and description, sort, paging |
-| Mental Health Books (`books.html`) | Books (cover, title, author(s), Find Book URL), "Found N books" count, sort, paging (10 per page) |
+| Mental Health Books (`books.html`) | Books (cover, title, author(s), short description (2 lines shown), Find Book URL), "Found N books" count, sort, paging (10 per page) |
 
 ## Conventions used in the HTML (keep them in Blade)
 - One H1 per page; section H2s; IDs on terms/items come from the slug.
@@ -58,3 +58,19 @@ Rules to follow in Laravel:
 3. No Bootstrap/Tailwind on top of this CSS (class names like `.container`, `.sort`, `.pager` would clash).
 4. Forms (newsletter, contact, instructor application): `@csrf`, and send the CSRF token with `fetch`.
 5. Keep content in the HTML (not built by JS) - good for SEO and for Blade.
+
+## Work with us (work-with-us.html, css/careers.css, js/careers.js)
+- Banner text/image: admin fields. Vacancies: loop of `.role` cards (title, min. experience, location, description, bullets, closing line, posted date -> `data-date`, plus `data-role/title/exp/loc`). The "4 Open Roles" count = number of roles.
+- "Apply Now" fills the left panel + Job Position from the card's data attributes (JS only copies what is in the HTML). On Laravel, also post a `role_id` hidden field.
+- Form: `@csrf`, `enctype="multipart/form-data"`, server-side validation, resume stored (pdf/doc/docx, size limit), replace the checkbox placeholder with real reCAPTCHA, send admin email. Form grid class is `.af-grid` (`.fgrid` is the footer).
+
+## Contact us (contact-us.html, css/contact.css, js/contact.js)
+- Banner text/image, contact details (address, email, phone, landline, business hours) and the Google Maps embed URL = site settings (also reused in the footer). Form: `@csrf`, server-side validation (`phone` => `digits:10`), admin email, real reCAPTCHA in place of the placeholder checkbox.
+- "Contact us" (menu), "Contact Us" (footer) and the "Reach Out To Us" button now link to this page on every page.
+
+## About us (about-us.html, css/about.css, js/about.js)
+- Dynamic blocks (all marked `<!-- DYNAMIC: -->`): hero text/image; 4 key numbers; program tabs (tab label + panel title/paragraphs; tabs are `role=tab`, ids `tab-*` / `pan-*` must stay paired); story; vision and mission lists; areas of focus (3); audience cards (image, title, text, link); quality principles (9, loop); MHFA journey milestones (loop, alternating above/below the line via `.tl-top`/`.tl-bot`, so add a `position` field or alternate by loop index); team members (photo, name, designation, bio; loop).
+- JS only handles tabs and the arrow buttons (`data-for="tl"` / `"tm"` point at the scroll tracks); content stays in the HTML.
+- Menu "About MHFA India" and footer link now open this page on every page.
+- Animations (about.js/about.css): scroll reveals via data-ab, count-up of key numbers, hover effects; all disabled for prefers-reduced-motion and without JS. Count-up reads the number from the HTML, so dynamic values just work.
+- About page journey is now a zig-zag of cards (`.jr` > `.jr-i` > `.jr-dot` + `.jr-card`): per milestone year (`.jr-yr`), title, text, then an optional image or video (Vimeo/YouTube iframe) inside `.jr-media` at the bottom of the card (images/journey-N.webp are placeholders). Odd/even order decides left/right, so just loop in date order. The centre line fills dark green on scroll and each circle turns dark when reached (js/about.js). Items after the 4th are hidden until 'View Full Journey'.
