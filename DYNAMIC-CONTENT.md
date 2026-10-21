@@ -73,4 +73,21 @@ Rules to follow in Laravel:
 - JS only handles tabs and the arrow buttons (`data-for="tl"` / `"tm"` point at the scroll tracks); content stays in the HTML.
 - Menu "About MHFA India" and footer link now open this page on every page.
 - Animations (about.js/about.css): scroll reveals via data-ab, count-up of key numbers, hover effects; all disabled for prefers-reduced-motion and without JS. Count-up reads the number from the HTML, so dynamic values just work.
-- About page journey is now a zig-zag of cards (`.jr` > `.jr-i` > `.jr-dot` + `.jr-card`): per milestone year (`.jr-yr`), title, text, then an optional image or video (Vimeo/YouTube iframe) inside `.jr-media` at the bottom of the card (images/journey-N.webp are placeholders). Odd/even order decides left/right, so just loop in date order. The centre line fills dark green on scroll and each circle turns dark when reached (js/about.js). Items after the 4th are hidden until 'View Full Journey'.
+- About page journey = horizontal timeline (`.tl`, items alternate above/below the line via `.tl-top`/`.tl-bot`, arrows scroll it).
+
+## Login (login.html, css/login.css, js/login.js)
+- Headline/lead/role lines = text fields. Role tabs: each tab carries `data-role` and `data-sub` (welcome text); JS copies them into the heading and the hidden `role` input. Form: `@csrf`, post to the Laravel login route with `role`, show validation errors under each field; "Login with OTP" and "Forgot password?" are placeholder links to real routes. The header "Login" button now links here on every page.
+
+## Instructor application (instructor-application.html, css/apply.css, js/apply.js)
+- Linked from the About Us menu ("Become an Instructor", sample link on every page).
+- 5-step form in ONE `<form>`: one `fieldset.step` per step; JS only moves between steps and validates each step with the browser's own checks (the Next button blocks until the step is valid). On Laravel keep the single form (`@csrf`, `enctype="multipart/form-data"`), validate again on the server, store the uploads (resume, support letter, address proof, PAN, conduct certificate), email the team.
+- Dynamic parts: left title/text/photo, course options (select), question list (`.qa`, one textarea each: `answer_N`), declaration/terms links, real reCAPTCHA instead of the placeholder box. Mobile = 10 digits (`digits:10`), postal code = 6 digits.
+- The Thank you panel (`#iaThanks`) is the success view: after the server saves the form, redirect to a view that shows only that panel (remove the form).
+
+## Login with OTP (login.html)
+Three panes on one page: password login, "Send OTP" (email or 10-digit mobile), "Verify & Login" (6 boxes, paste supported, 30s resend timer). All text is in the HTML (error messages are `data-*` attributes).
+Laravel: routes `login/otp/send`, `login/otp/verify`, `login/otp/resend`, each with `@csrf`. Rate-limit (`throttle:5,1`), store a hashed OTP with a 5-minute expiry, allow max 5 wrong attempts, and always return the same message whether or not the user exists. The `role` hidden field (Instructor / Learner / Company) is posted in every pane. The JS submit handlers are demo only: remove `e.preventDefault()` in the success path or switch panes from the AJAX response.
+
+## Forgot password (login.html)
+4 screens on the same page: send OTP (`#lgFg1`) → verify OTP (`#lgFg2`) → new password (`#lgFg3`) → success (`#lgFg4`). Opened from the "Forgot password?" link. All text is in the HTML (errors are `data-*` attributes).
+Laravel: routes `forgot/send`, `forgot/verify`, `forgot/resend`, `forgot/reset`, all with `@csrf` and throttle. Send always returns the same message whether or not the account exists. OTP stored hashed, 5-minute expiry, max 5 attempts. Verify returns a one-time token (about 10 min) that goes into `#lgFg3 [name=token]`; reset accepts the password only with that token (min 8, letter + number, `confirmed`). After reset: log out other sessions and email "your password was changed". The JS submit handlers are demo only: replace the `go('...')` calls with the AJAX success callbacks.
