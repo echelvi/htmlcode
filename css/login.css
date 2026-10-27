@@ -1,0 +1,78 @@
+/* Login template (two-column sign-in). Loaded after style.css. */
+.lg{position:relative;background:linear-gradient(90deg,#f0f9f4 50%,#fff 50%);border-bottom:1px solid #dcebe1;margin-bottom:60px;overflow:hidden}
+.lg-wave{position:absolute;left:0;top:0;width:50%;height:100%;pointer-events:none}
+.lg .container{position:relative}
+.lg-grid{display:grid;grid-template-columns:1fr 1fr;min-height:481px}
+.lg-l{padding:74px 20px 40px 37px;align-self:center}
+.lg h1{font:600 35px/43px var(--head);letter-spacing:-.03em;color:#1a1a1a}
+.lg h1 em,.lg h2 em{font-style:normal;color:var(--green)}
+.lg-lead{margin-top:18px;max-width:360px;font-size:14.8px;line-height:23.7px;color:#555}
+.lg-roles{margin-top:32px;display:grid;gap:12px}
+.lg-roles li{display:flex;gap:14px;align-items:flex-start}
+.lg-roles i{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:#fff;color:var(--green);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.lg-roles i svg{width:17px;height:17px}
+.lg-roles b{display:block;font:600 12.6px/18px var(--body);color:#1a1a1a}
+.lg-roles span{display:block;margin-top:1px;font-size:12.2px;line-height:18px;color:#555;max-width:330px}
+.lg-r{padding:45px 52px 40px 96px;align-self:center}
+.lg-tabs{display:flex;gap:4px;padding:5px;border:1px solid #d6d6d6;border-radius:7px;background:#fff}
+.lg-tabs button{flex:1;height:30px;border-radius:5px;background:transparent;font:500 12.5px var(--body);color:#555;transition:background .2s,color .2s}
+.lg-tabs button[aria-selected=true]{background:var(--green);color:#fff;font-weight:600}
+.lg-tabs button:not([aria-selected=true]):hover{background:#f0f9f4}
+.lg-tabs button:focus-visible{outline:2px solid var(--green-dark);outline-offset:2px}
+.lg h2{margin-top:34px;font:600 31px/38px var(--head);letter-spacing:-.03em;color:#1a1a1a}
+.lg-sub{margin-top:10px;min-height:42px;font-size:12.6px;line-height:21px;color:#555;max-width:340px}
+.lg-f{margin-top:20px}
+.lg-f label{display:block;font:500 12.6px/18px var(--body);color:#222;margin:12px 0 6px}
+.lg-f label:first-of-type{margin-top:0}
+.lg-f input[type=email],.lg-f input[type=password],.lg-f input[type=text]{display:block;width:100%;height:31px;padding:0 12px;border:1px solid #d6d6d6;border-radius:4px;background:#fff;font:400 11px var(--body);color:#222}
+.lg-f input::placeholder{color:#777}
+.lg-f input:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+.lg-otp{display:block;width:max-content;margin:10px 0 0 auto;font:600 10.5px var(--body);color:var(--green-dark);text-decoration:underline;text-underline-offset:2px}
+.lg-otp:hover,.lg-forgot:hover{color:var(--green)}
+.lg-btn{display:block;width:100%;height:34px;margin-top:20px;border-radius:3px;background:var(--green-dark);color:#fff;font:600 12px var(--body);transition:background .2s}
+.lg-btn:hover{background:var(--green)}
+.lg-forgot{display:block;width:max-content;margin:16px auto 0;font:600 12.6px var(--body);color:var(--green)}
+@media (max-width:900px){
+  .lg{background:#fff}
+  .lg-wave{width:100%;height:50%}
+  .lg-grid{grid-template-columns:1fr;min-height:0}
+  .lg-l{padding:40px 0 30px;background:transparent}
+  .lg-r{padding:10px 0 44px}
+  .lg-lead{max-width:none}
+  .lg-sub{max-width:none}
+}
+@media (max-width:640px){.lg h1{font-size:28px;line-height:35px}.lg h2{font-size:25px;line-height:31px}}
+
+/* OTP login: three panes stacked in one grid cell so the column height never changes */
+.lg-panes{display:grid}
+.lg-pane{grid-area:1/1;visibility:hidden;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s,visibility 0s .25s}
+.lg-pane.cur{visibility:visible;opacity:1;transform:none;transition:opacity .25s,transform .25s}
+button.lg-otp,button.lg-plain,.lg-change,#lgResend{background:none;border:0;padding:0;cursor:pointer;font-family:var(--body)}
+.lg-plain{margin-top:16px}
+.lg-hint{margin-top:14px;font-size:11px;line-height:17px;color:#666;text-align:center}
+.lg-sent{margin-top:0;font-size:12.2px;line-height:19px;color:#444}
+.lg-sent b{color:#111;font-weight:600;word-break:break-all}
+.lg-change{font:600 11px var(--body);color:var(--green-dark);text-decoration:underline;text-underline-offset:2px;margin-left:4px}
+.lg-boxes{display:flex;gap:8px;margin-top:14px}
+.lg-f .lg-boxes input{width:100%;min-width:0;height:40px;padding:0;text-align:center;font:600 16px var(--body);border:1px solid #d6d6d6;border-radius:4px;background:#fff}
+.lg-boxes input.on{border-color:var(--green);background:var(--mint)}
+.lg-err{margin-top:8px;font-size:11px;line-height:16px;color:#c0392b}
+.lg-err[hidden]{display:none}
+.lg-resend{margin-top:12px;font-size:11px;color:#666;text-align:center;min-height:18px}
+#lgResend{font:600 11.5px var(--body);color:var(--green-dark);text-decoration:underline;text-underline-offset:2px}
+#lgResend[hidden]{display:none}
+.lg-f input.bad{border-color:#c0392b}
+@media (prefers-reduced-motion:reduce){.lg-pane{transition:none}}
+
+/* Forgot password */
+.lg-eye{position:relative}
+.lg-f .lg-eye input{padding-right:36px}
+.lg-show{position:absolute;right:0;top:0;width:34px;height:31px;display:grid;place-items:center;background:none;border:0;color:#777;cursor:pointer}
+.lg-show svg{width:16px;height:16px}
+.lg-show.on{color:var(--green)}
+.lg-rules{margin-top:8px;font-size:11px;line-height:16px;color:#666}
+.lg-done{text-align:center;padding-top:14px}
+.lg-tick{display:grid;place-items:center;width:52px;height:52px;margin:0 auto;border-radius:50%;background:var(--mint);color:var(--green)}
+.lg-tick svg{width:26px;height:26px}
+.lg-done h3{margin-top:16px;font:600 20px/28px var(--head);color:#1a1a1a}
+.lg-done p{margin-top:6px;font-size:12.6px;line-height:20px;color:#555}

@@ -1,0 +1,35 @@
+/* Contact us template (details card + message form + map). Loaded after style.css. */
+.pb-contact{--bn:url("../images/banner-contact.webp");--bp:50%}
+.pb-contact h1{max-width:330px}
+.pb-contact p{max-width:330px}
+body.pg-contact .ct{padding:44px 0 36px}
+.ct-box{display:grid;grid-template-columns:42% 1fr;border:1px solid #dcebe1;border-radius:12px;overflow:hidden;background:#fff}
+.ct-l{background:#eef7f1;padding:34px 24px 30px 24px}
+.ct-l h2,.ct-f h2{font-size:var(--t2);line-height:var(--t2l);font-weight:600;letter-spacing:-.02em;color:#1a1a1a}
+.ct-l ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.ct-l li{display:flex;gap:12px;align-items:flex-start}
+.ct-l i{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:#fff;color:var(--green-dark);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.ct-l i svg{width:16px;height:16px}
+.ct-l b{display:block;font-size:11.5px;line-height:17px;font-weight:600;color:#1a1a1a}
+.ct-l p{font-size:10.5px;line-height:16px;color:#444;margin-top:2px}
+.ct-l a{text-decoration:underline;text-underline-offset:2px}
+.ct-l a:hover{color:var(--green-dark)}
+.ct-f{padding:28px 26px 24px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:20px}
+.ct-f label{display:block;font:500 10.5px var(--body);color:#222}
+.ct-f label.full{margin-top:12px}
+.ct-f sup{color:var(--orange);font-size:11px}
+.ct-f input[type=text],.ct-f input[type=email],.ct-f input[type=tel],.ct-f textarea{display:block;width:100%;margin-top:6px;border:1px solid #d6d6d6;border-radius:5px;background:#fff;padding:0 10px;height:32px;font:400 10px var(--body);color:#333}
+.ct-f select{display:block;width:100%;margin-top:6px;border:1px solid #d6d6d6;border-radius:5px;height:32px;padding:0 28px 0 10px;font:400 10px var(--body);color:#333;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center/10px;cursor:pointer}
+.ct-f select:focus{outline:2px solid var(--green);outline-offset:1px}
+.ct-f textarea{height:78px;padding:9px 10px;resize:vertical}
+.ct-f input:focus,.ct-f textarea:focus{outline:2px solid var(--green);outline-offset:1px}
+.ct-f ::placeholder{color:#999}
+.ct-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.captcha label{display:flex;align-items:center;gap:10px;width:150px;height:38px;padding:0 10px;border:1px solid #d3d3d3;border-radius:3px;background:#f9f9f9;font:400 8px var(--body);color:#222}
+.captcha input{width:14px;height:14px;margin:0}
+.ct-foot .btn{font-size:11px;padding:9px 22px;border-radius:5px}
+.ct-map{margin-top:22px;height:287px;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.1);background:#e8eee9}
+.ct-map iframe{display:block;width:100%;height:100%;border:0}
+@media (max-width:1000px){.ct-box{grid-template-columns:1fr}.pb-contact h1,.pb-contact p{max-width:none}}
+@media (max-width:640px){.ct-grid{grid-template-columns:1fr}.ct-foot{flex-direction:column;align-items:stretch;gap:12px}.ct-foot .btn{width:100%;justify-content:center}.ct-map{height:240px}}

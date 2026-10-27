@@ -1,0 +1,56 @@
+/* Cookie consent banner + preferences panel (all pages) */
+.ck-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;background:#fff;border-top:1px solid var(--border,#e3e3e3);box-shadow:0 -6px 24px rgba(0,0,0,.08);transform:translateY(110%);transition:transform .35s cubic-bezier(.22,.8,.3,1)}
+.ck-bar.show{transform:none}
+/* the site zooms <body> on large screens (--z in style.css); undo it here so the bar stays compact */
+.ck-bar{zoom:calc(1 / var(--z,1))}
+.ck-bar[hidden],.ck-modal[hidden]{display:none}
+.ck-in{max-width:1840px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.ck-txt{flex:1 1 auto;max-width:1000px;font:400 13px/23px var(--body,'Inter',sans-serif);color:#444;margin:0}
+.ck-txt a{color:var(--green-dark,#106834);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.ck-btns{display:flex;gap:14px;flex:none}
+.ck-btn{height:44px;padding:0 14px;border-radius:4px;border:1.5px solid var(--green-dark,#106834);background:var(--green-dark,#106834);color:#fff;font:600 13px var(--head,'Plus Jakarta Sans',sans-serif);letter-spacing:-.01em;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.ck-btn:hover{background:var(--green-deep,#0e5a2d);border-color:var(--green-deep,#0e5a2d)}
+.ck-btn.ol{background:#fff;color:var(--green-dark,#106834)}
+.ck-btn.ol:hover{background:var(--mint,#f1faf5)}
+.ck-btn:focus-visible,.ck-txt a:focus-visible,.ck-x:focus-visible,.ck-sw input:focus-visible+span{outline:2px solid var(--orange,#ff7300);outline-offset:2px}
+
+/* preferences panel */
+.ck-modal{position:fixed;inset:0;z-index:9995;background:rgba(10,20,15,.55);display:grid;place-items:center;padding:16px}
+.ck-box{background:#fff;border-radius:10px;width:min(560px,100%);max-height:calc(100vh - 32px);display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.ck-hd{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--border,#e3e3e3)}
+.ck-hd h2{font:600 19px/1.3 var(--head,'Plus Jakarta Sans',sans-serif);letter-spacing:-.02em;color:var(--green-dark,#106834);margin:0}
+.ck-x{width:32px;height:32px;border-radius:50%;border:0;background:var(--mint,#f1faf5);color:#333;font-size:20px;line-height:1;cursor:pointer}
+.ck-bd{padding:8px 24px;overflow:auto}
+.ck-bd>p{font:400 13px/21px var(--body,'Inter',sans-serif);color:#555;margin:10px 0 6px}
+.ck-cat{padding:14px 0;border-bottom:1px solid #eee}
+.ck-cat:last-child{border-bottom:0}
+.ck-row{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.ck-row h3{font:600 14px var(--body,'Inter',sans-serif);color:#1e1e1e;margin:0}
+.ck-cat p{font:400 12.5px/19px var(--body,'Inter',sans-serif);color:#666;margin:6px 0 0}
+.ck-on{font:600 11.5px var(--body,'Inter',sans-serif);color:var(--green,#109848)}
+.ck-sw{position:relative;display:inline-block;width:42px;height:24px;flex:none}
+.ck-sw input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;z-index:1}
+.ck-sw span{position:absolute;inset:0;border-radius:24px;background:#cfd4d1;transition:background .2s}
+.ck-sw span:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}
+.ck-sw input:checked+span{background:var(--green,#109848)}
+.ck-sw input:checked+span:after{transform:translateX(18px)}
+.ck-ft{display:flex;justify-content:flex-end;gap:12px;padding:16px 24px;border-top:1px solid var(--border,#e3e3e3)}
+.ck-ft .ck-btn{height:42px}
+
+@media (max-width:1440px){
+  .ck-in{padding:16px 28px;gap:28px}
+  .ck-btns{gap:10px}
+  .ck-btn{height:42px;padding:0 12px;font-size:12.5px}
+}
+@media (max-width:1200px){
+  .ck-in{flex-direction:column;align-items:stretch;gap:18px;padding:20px}
+  .ck-btns{flex-wrap:wrap}
+  .ck-btns .ck-btn{flex:1 1 auto}
+}
+@media (max-width:560px){
+  .ck-txt{font-size:12.5px;line-height:20px;max-height:34vh;overflow:auto}
+  .ck-btns{flex-direction:column;gap:10px}
+  .ck-btn{height:44px}
+  .ck-ft{flex-direction:column-reverse}
+}
+@media (prefers-reduced-motion:reduce){.ck-bar{transition:none}}
