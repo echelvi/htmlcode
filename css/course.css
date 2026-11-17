@@ -1,0 +1,191 @@
+/* ===== COURSE DETAILS template (MHFA Blended for Workplace / Public …). Sizes follow the 1067px canvas (Figma 1440 ÷ 1.35) ===== */
+.pg-course{--cream:#faf6ee;--line:#d9ddda}
+
+/* hero */
+.cs-hero{background:var(--green-dark);color:#fff;padding:26px 0 62px}
+.cs-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:10.5px;line-height:16px;color:#e3efe7}
+.cs-crumbs a:hover{color:#fff;text-decoration:underline}
+.cs-crumbs span{opacity:.6}
+.cs-crumbs b{font-weight:600;color:#fff}
+.cs-hgrid{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:30px;align-items:center;margin-top:28px}
+.cs-hero h1{font-size:35px;line-height:43px;font-weight:700;letter-spacing:-.05em;color:#fff}
+.cs-hero .lead{margin-top:14px;max-width:490px;font-size:13.3px;line-height:20.7px;color:#e9f3ed}
+.cs-meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:22px;font-size:10.5px;font-weight:500;color:#fff}
+.cs-meta span{display:inline-flex;align-items:center;gap:7px}
+.cs-meta i{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:rgba(255,255,255,.18)}
+.cs-meta i svg{width:11px;height:11px}
+.cs-meta a{text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.cs-hero .himg{height:296px;border-radius:12px;overflow:hidden;background:#0e5a2d}
+.cs-hero .himg img{width:100%;height:100%;object-fit:cover;object-position:62% center}
+
+/* key facts bar (overlaps the hero) */
+.cs-facts{position:relative;z-index:2;margin:-27px auto 0;max-width:918px;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08);
+  display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;align-items:center;padding:16px 30px;min-height:78px}
+.cs-facts li{list-style:none;display:flex;align-items:center;gap:11px;padding:0 4px}
+.cs-facts li+li{border-left:1px solid #dcdcdc;padding-left:30px}
+.cs-facts svg{width:25px;height:25px;flex:none;color:var(--green-dark)}
+.cs-facts small{display:block;font-size:8.3px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:#555}
+.cs-facts b{display:block;margin-top:2px;font-size:11.8px;font-weight:600;color:#1e1e1e;white-space:nowrap}
+
+/* main two columns */
+.cs-main{padding:44px 0 72px}
+.cs-cols{display:grid;grid-template-columns:minmax(0,1.95fr) minmax(0,1fr);gap:18px;align-items:start}   /* same columns as the "Let's stay in touch" row below, so the edges line up */
+.cs-body>section{margin-top:40px;scroll-margin-top:90px}
+.cs-body>section:first-child{margin-top:0}
+.cs-body h2{font-size:21px;line-height:27px;font-weight:600;letter-spacing:-.03em;color:#1e1e1e}
+.cs-body .sub{margin:8px 0 0;max-width:none;text-align:left;font-size:12.6px;line-height:20.7px;color:#555}
+
+/* tick list */
+.cs-ticks{list-style:none;margin:0;padding:0}
+.cs-ticks li{position:relative;padding-left:24px;font-size:12.6px;line-height:20.7px;color:#555}
+.cs-ticks li+li{margin-top:12px}
+.cs-ticks li:before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:50%;border:1.6px solid var(--green-dark);box-sizing:border-box;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23106834' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6.5 12.5l3.5 3.5 7.5-8'/%3E%3C/svg%3E") center/10px no-repeat}
+.cs-ticks b{color:#1e1e1e;font-weight:600}
+
+.cs-learn{background:var(--cream);border-radius:12px;padding:21px 21px 22px}
+.cs-learn h2{font-size:21px;margin-bottom:18px}
+
+/* skills chips */
+.cs-chips{display:flex;flex-wrap:wrap;gap:8px 7px;margin-top:18px;list-style:none;padding:0}
+.cs-chips li{height:32px;display:inline-flex;align-items:center;padding:0 15px;border-radius:99px;background:#edeff2;font-size:11.3px;font-weight:500;color:#444;transition:background-color .2s,color .2s}
+.cs-chips li:hover{background:#e1f2e7;color:var(--green-dark)}
+
+/* component boxes */
+.cs-comp{border:1px solid var(--line);border-radius:12px;padding:18px 18px 19px;margin-top:12px}
+.cs-comp:first-of-type{margin-top:16px}
+.cs-comp h3{font-family:var(--body);font-size:17.8px;line-height:24px;font-weight:500;letter-spacing:-.01em;color:#1e1e1e;margin-bottom:12px}
+.cs-comp .cs-ticks li+li{margin-top:12px}
+
+/* syllabus accordion */
+.cs-acc{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:15px}
+.cs-acc+.cs-acc{margin-top:15px}
+.cs-acc-h{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:17px 18px 15px;background:#f1faf5;text-align:left;cursor:pointer;border-bottom:1px solid var(--line)}
+.cs-acc-h b{display:block;font:500 17.8px/23px var(--body);letter-spacing:-.01em;color:var(--green-dark)}
+.cs-acc-h small{display:block;margin-top:3px;font-size:9.6px;color:#555}
+.cs-acc-h svg{width:13px;height:13px;flex:none;color:var(--green-dark);transition:rotate .3s}
+.cs-acc-h[aria-expanded=false] svg{rotate:180deg}
+.cs-acc-h[aria-expanded=false]{border-bottom-color:transparent}
+.cs-acc-h:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.cs-acc-b{display:grid;grid-template-rows:1fr;transition:grid-template-rows .4s cubic-bezier(.22,.8,.3,1)}
+.cs-acc-b>div{overflow:hidden}
+.cs-acc.shut .cs-acc-b{grid-template-rows:0fr}
+.cs-mods{display:grid;grid-template-columns:1fr 1fr;gap:0 15px;padding:4px 18px 10px}
+.cs-mod{padding:14px 0 12px;border-bottom:1px solid var(--line)}
+.cs-mod:last-child,.cs-mod.last{border-bottom:0}
+.cs-mods.sessions .cs-mod{border-bottom:0;padding-top:16px}
+.cs-mod h4{display:flex;align-items:center;gap:11px;font:500 13.3px/18px var(--body);color:#1e1e1e;text-transform:uppercase;letter-spacing:.01em}
+.cs-mod h4 svg{width:15px;height:15px;color:var(--green-dark);flex:none}
+.cs-mod ul{margin:8px 0 0 26px;padding:0;list-style:disc}
+.cs-mod li{font-size:11.8px;line-height:17.8px;color:#555;padding-left:2px}
+.cs-mod li+li{margin-top:3px}
+.cs-mod li::marker{color:#777}
+
+/* brochure */
+.cs-broch{display:grid;grid-template-columns:228px 1fr;align-items:center;min-height:178px;border-radius:12px;overflow:hidden;margin-top:36px;
+  background:radial-gradient(120% 140% at 100% 100%,#bfe8cf 0%,#d9f2e2 45%,#eef9f2 75%);position:relative}
+.cs-broch:after{content:"";position:absolute;right:-60px;bottom:-90px;width:260px;height:200px;border-radius:50%;background:rgba(255,255,255,.25);pointer-events:none}
+.cs-broch img{width:100%;height:100%;object-fit:cover}
+.cs-broch div{padding:20px 26px 20px 30px;position:relative;z-index:1}
+.cs-broch h3{font-size:20.5px;line-height:26px;font-weight:600;letter-spacing:-.03em;color:#1e1e1e;max-width:330px}
+.cs-broch .btn{margin-top:16px;height:36px;border-radius:3px;padding:0 17px;font-size:11.8px}
+
+/* certification */
+.cs-cert{display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:center;background:var(--cream);border-radius:12px;padding:18px 20px 18px 24px;margin-top:37px}
+.cs-cert img{width:100%;height:auto;filter:drop-shadow(0 8px 14px rgba(0,0,0,.12));transition:rotate .5s cubic-bezier(.22,.8,.3,1),scale .5s cubic-bezier(.22,.8,.3,1)}
+.cs-cert:hover img{rotate:-2deg;scale:1.03}
+.cs-cert h3{font-size:21px;line-height:27px;font-weight:600;letter-spacing:-.03em;color:#1e1e1e}
+.cs-cert p{margin-top:10px;font-size:12.6px;line-height:20.7px;color:#555}
+.cs-cert p b{color:#1e1e1e;font-weight:600}
+.cs-cert .cs-ticks{margin-top:14px}
+.cs-cert .cs-ticks li{font-size:11.8px;line-height:18px;font-weight:500;color:#1e1e1e}
+.cs-cert .cs-ticks li+li{margin-top:10px}
+.cs-cert .cs-ticks li:before{top:2px}
+
+/* FAQ: + / − , one open at a time */
+.cs-faq h2{margin-bottom:20px}
+.cs-faq details{background:#f1faf5;border:1px solid #dbe8df;border-radius:12px;box-shadow:0 1px 2px rgba(16,104,52,.06);margin-bottom:12px;padding:0;overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.cs-faq details:last-of-type{margin-bottom:0}
+.cs-faq details:hover{border-color:#c9ddd0;box-shadow:0 4px 12px rgba(16,104,52,.1)}
+.cs-faq summary{height:auto;min-height:58px;padding:10px 30px;gap:16px;font-size:13.3px;line-height:19px;font-weight:600;color:var(--green-dark)}
+.cs-faq summary:after,.cs-faq details[open] summary:after{content:"";width:13px;height:13px;border:0;transform:none;flex:none;
+  background:linear-gradient(var(--green-dark),var(--green-dark)) center/13px 1.8px no-repeat,linear-gradient(var(--green-dark),var(--green-dark)) center/1.8px 13px no-repeat;transition:rotate .3s}
+.cs-faq details[open] summary:after{background:linear-gradient(var(--green-dark),var(--green-dark)) center/13px 1.8px no-repeat;rotate:180deg}
+.cs-faq details[open] summary{height:auto;min-height:58px}
+.cs-faq details p{margin:-4px 0 0;padding:0 30px 20px;font-size:12.6px;line-height:20.7px;color:#555}
+
+/* sidebar */
+.cs-side{position:sticky;top:84px;display:flex;flex-direction:column;gap:12px}
+.cs-card{background:#fff;border-radius:12px;box-shadow:0 2px 14px rgba(0,0,0,.07);padding:6px 6px 21px}
+.cs-video{position:relative;display:block;width:100%;height:163px;border-radius:8px;overflow:hidden;cursor:pointer;background:#2b3b47}
+.cs-video img{width:100%;height:100%;object-fit:cover;transition:scale .6s cubic-bezier(.22,.8,.3,1)}
+.cs-video:hover img{scale:1.05}
+.cs-video .play{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.55);display:grid;place-items:center;color:#fff;backdrop-filter:blur(4px);transition:scale .3s,background-color .3s}
+.cs-video .play:before{content:"";position:absolute;inset:-1px;border-radius:50%;border:2px solid rgba(255,255,255,.6);animation:cs-pulse 2.2s ease-out infinite}
+@keyframes cs-pulse{from{scale:1;opacity:.8}to{scale:1.6;opacity:0}}
+.cs-video .play svg{width:15px;height:15px;margin-left:2px}
+.cs-video:hover .play{scale:1.1;background:var(--green-dark)}
+.cs-video:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.cs-card-in{padding:0 9px}
+.cs-card h3{margin-top:18px;font:500 15px/20px var(--body);color:#1e1e1e}
+.cs-info{list-style:none;margin:10px 0 0;padding:0}
+.cs-info li{display:flex;justify-content:space-between;gap:12px;padding:10px 0 9px;border-bottom:1px solid #dcdcdc;font-size:9.6px;line-height:13px;color:#1e1e1e}
+.cs-info li span:last-child{text-align:right;color:#444}
+.cs-next h3{margin-top:22px}
+.cs-next p{margin-top:12px;font-size:10.4px;color:#555}
+.cs-next .btn{width:100%;height:36px;margin-top:9px;border-radius:4px;font-size:11.8px}
+.cs-share{background:#fff;border:1px solid #dbe8df;border-radius:12px;padding:16px 18px 18px}
+.cs-share h3{font:500 13.3px/18px var(--body);color:#1e1e1e;margin-bottom:12px}
+.cs-share .share{gap:7px}
+.cs-share .share a{width:24px;height:24px;background:var(--green-dark)}
+.cs-share .share a svg{width:12px;height:12px}
+.cs-share .share a:hover{background:var(--green)}
+.cs-share .share .copied{top:-28px;right:auto;left:120px}
+
+/* share buttons (same look as the blog pages) */
+.share{display:flex;align-items:center;gap:6px;position:relative}
+.share a{width:24px;height:24px;border-radius:50%;color:#fff;display:inline-flex;align-items:center;justify-content:center;transition:translate .25s,background-color .25s}
+.share a:hover{translate:0 -3px}
+.share .copied{position:absolute;top:-26px;font-style:normal;font-size:10px;background:#1e1e1e;color:#fff;padding:3px 8px;border-radius:4px;opacity:0;pointer-events:none;transition:opacity .25s}
+.share .copied.on{opacity:1}
+
+/* hero entrance */
+@keyframes cs-in{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+.cs-hero .cs-hgrid>div>*{animation:cs-in .7s cubic-bezier(.22,.8,.3,1) backwards}
+.cs-hero h1{animation-delay:.08s}.cs-hero .lead{animation-delay:.18s}.cs-hero .cs-meta{animation-delay:.28s}
+.cs-hero .himg{animation:cs-in .8s .15s cubic-bezier(.22,.8,.3,1) backwards}
+.cs-facts{animation:cs-in .7s .35s cubic-bezier(.22,.8,.3,1) backwards}
+
+/* responsive */
+@media (max-width:1000px){
+  .cs-hgrid{grid-template-columns:1fr 1fr}
+  .cs-hero h1{font-size:29px;line-height:36px}
+  .cs-facts{grid-template-columns:1fr 1fr;row-gap:16px;padding:18px 22px}
+  .cs-facts li+li{border-left:0;padding-left:4px}
+  .cs-cols{grid-template-columns:1fr}
+  .cs-side{position:static;display:grid;grid-template-columns:1fr 1fr;align-items:start}
+}
+@media (max-width:760px){
+  .cs-hgrid{grid-template-columns:minmax(0,1fr)}
+  .cs-hero .himg{height:auto;aspect-ratio:16/10}
+  .cs-side{grid-template-columns:1fr}
+  .cs-broch{grid-template-columns:1fr}
+  .cs-broch img{height:180px}
+  .cs-cert{grid-template-columns:1fr;text-align:left}
+  .cs-cert img{max-width:220px;margin:0 auto}
+}
+@media (max-width:640px){
+  .cs-hero{padding-bottom:50px}
+  .cs-hero h1{font-size:25px;line-height:31px}
+  .cs-facts{grid-template-columns:1fr;margin-left:var(--gutter);margin-right:var(--gutter)}
+  .cs-mods{grid-template-columns:1fr}
+  .cs-mod.last{border-bottom:1px solid var(--line)}
+  .cs-mods .cs-mod:last-child{border-bottom:0}
+  .cs-faq summary{padding:10px 18px;font-size:13px}
+  .cs-faq details p{padding:0 18px 18px}
+  .cs-acc-h b{font-size:16px;line-height:21px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cs-hero .cs-hgrid>div>*,.cs-hero .himg,.cs-facts,.cs-video .play:before{animation:none}
+  .cs-acc-b,.cs-acc-h svg,.cs-cert img,.cs-video img{transition:none}
+}
